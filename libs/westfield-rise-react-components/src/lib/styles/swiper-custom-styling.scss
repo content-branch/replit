@@ -1,0 +1,196 @@
+@import '../styles/breakpoints.scss';
+
+.custom-swiper-button {
+  .cardsCarousel & {
+    border: 1px solid #3d3836;
+    border-radius: 100%;
+    max-width: unset;
+  }
+
+  &:not(.swiper-button-disabled) {
+    cursor: pointer;
+  }
+
+  &--prev {
+    transform: scaleX(-1);
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.30000001192092896;
+  }
+}
+
+.swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal {
+  --swiper-pagination-progressbar-size: 2px;
+  --swiper-pagination-progressbar-bg-color: #3d38361a;
+  --swiper-pagination-color: #3d3836;
+  position: relative;
+}
+
+.imageCarousel {
+  .swiper-slide {
+    opacity: 0.20000000298023224;
+    transition: opacity 0.2s linear;
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+  }
+
+  &:not(.single) .swiper-slide {
+    cursor: url('../assets/img/icon-cursor-drag.png'), pointer;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:active {
+      cursor: url('../assets/img/icon-cursor-drag-pressed.png'), pointer;
+
+      @include until-desktop-small {
+        cursor: url('../assets/img/icon-cursor-drag-pressed-small.png'), pointer;
+      }
+    }
+
+    @include until-desktop-small {
+      cursor: url('../assets/img/icon-cursor-drag-small.png'), pointer;
+    }
+  }
+
+  &.single .swiper-slide {
+    img {
+      margin: 0 auto;
+      max-width: 1600px;
+
+      @include until-desktop-wide {
+        max-width: 1110px;
+      }
+
+      @include until-desktop-small {
+        max-width: 688px;
+      }
+
+      @include until-tablet {
+        max-width: 500px;
+      }
+    }
+  }
+}
+
+.newsInsightsCarousel {
+  > .swiper-wrapper {
+    .swiper-slide {
+      cursor: url('../assets/img/icon-cursor-drag.png'), pointer;
+      -moz-user-select: -moz-none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      &:active {
+        cursor: url('../assets/img/icon-cursor-drag-pressed.png'), pointer;
+
+        @include until-desktop-small {
+          cursor: url('../assets/img/icon-cursor-drag-pressed-small.png'),
+            pointer;
+        }
+      }
+
+      @include until-desktop-small {
+        cursor: url('../assets/img/icon-cursor-drag-small.png'), pointer;
+      }
+    }
+  }
+}
+
+.logoCarousel > .swiper-wrapper {
+  --swiper-wrapper-transition-timing-function: linear;
+  align-items: center;
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.horizontalSwiper {
+  margin-left: -120px;
+  margin-right: -120px;
+
+  .swiper-slide-container {
+    max-width: 1680px;
+    margin: 0 auto;
+  }
+
+  .swiper-slide {
+    height: auto;
+    align-self: stretch;
+  }
+
+  @include until-desktop-wide {
+    margin-left: -80px;
+    margin-right: -80px;
+
+    .swiper-slide-container {
+      max-width: calc(100% - 160px);
+    }
+  }
+
+  @include until-desktop-small {
+    margin-left: -40px;
+    margin-right: -40px;
+
+    .swiper-slide-container {
+      max-width: calc(100% - 80px);
+    }
+  }
+
+  @include until-tablet {
+    margin-left: -16px;
+    margin-right: -16px;
+
+    .swiper-slide-container {
+      max-width: calc(100% - 32px);
+      height: 100%;
+    }
+  }
+
+  .statistic-container {
+    padding-right: 60px;
+
+    @include until-desktop-wide {
+      padding-right: 40px;
+    }
+
+    @include until-desktop-small {
+      padding-right: 20px;
+    }
+
+    @include until-tablet {
+      padding-right: 0px;
+    }
+  }
+}
+
+.featuredCarousel {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  &.swiper-vertical {
+    height: 500px;
+    max-height: 100%;
+    overflow-y: visible;
+
+    @include desktop-wide {
+      height: 720px;
+    }
+
+    @media screen and (max-height: 600px) {
+      height: 100%;
+    }
+  }
+}
+
+[class^='Navigation_featured'] .swiper-slide {
+  height: auto !important;
+}

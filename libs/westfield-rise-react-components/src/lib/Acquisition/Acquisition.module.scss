@@ -1,0 +1,240 @@
+@import '../styles/text-styles.module.scss';
+@import '../styles/themes.module.scss';
+@import '../styles/effects.scss';
+@import '../styles/spacing.scss';
+
+$bg_themes: (
+  'peacock': peacock canary ultraviolet,
+  'ultraviolet': ultraviolet peacock canary,
+  'candy': candy ultraviolet scarlet,
+  'scarlet': scarlet candy ultraviolet,
+  'canary': canary ultraviolet tangerine,
+  'tangerine': tangerine canary ultraviolet,
+);
+
+.container {
+  padding: 80px 80px 0;
+  position: relative;
+  overflow: hidden;
+
+  @include until-desktop-wide {
+    padding: 80px 80px 0;
+  }
+
+  @include until-desktop-small {
+    padding: 40px 40px 0;
+  }
+
+  @include until-tablet {
+    padding: 20px 20px 0;
+  }
+
+  @each $theme,
+  $color in $bg_themes {
+    &--#{$theme} .animation {
+      background: url('/img/acquisition-bg/#{nth($color, 1)}.webp') center center no-repeat;
+      background-size: 110% 110%;
+      -webkit-animation: heroImgTranslate 15s infinite linear;
+      animation: heroImgTranslate 15s infinite linear;
+    }
+  }
+
+  .container_inner {
+    position: relative;
+    padding: 90px 0;
+    background: rgba(255, 255, 255, 0.6);
+
+    &::after {
+      content: '';
+      background: url('../assets/img/dots.png');
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      backdrop-filter: blur(5px);
+    }
+
+    @include until-desktop-wide {
+      padding: 80px 190px;
+    }
+
+    @include until-desktop-small {
+      padding: 60px 20px;
+    }
+
+    @include until-tablet {
+      padding: 40px 20px;
+    }
+  }
+}
+
+.card {
+  @extend .centered-container;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  gap: 55.5px;
+
+  @include until-desktop-wide {
+    gap: 37px;
+  }
+
+  @include until-desktop-small {
+    max-width: 488px;
+    gap: 24px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+
+  @include until-desktop-wide {
+    gap: 60px;
+  }
+
+  @include until-desktop-small {
+    gap: 40px;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include until-desktop-wide {
+      gap: 32px;
+    }
+
+    @include until-desktop-small {
+      gap: 28px;
+    }
+  }
+}
+
+.logo {
+  @include until-desktop-wide {
+    width: 92px;
+    height: 52px;
+  }
+
+  @include until-desktop-small {
+    width: 56px;
+    height: 32px;
+  }
+}
+
+.title {
+  @extend .display-m;
+
+  @include desktop-wide {
+    font-size: 120px;
+  }
+
+  @include until-desktop-small {
+    font-size: 11vw;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  @include until-desktop-small {
+    gap: 20px;
+  }
+
+  @include until-tablet {
+    gap: 16px;
+  }
+
+  >p {
+    @extend .heading-3;
+
+    @include until-desktop-small {
+      font-size: $font-size-20;
+    }
+
+    &.quote {
+      &:before {
+        content: '\201C';
+      }
+
+      &:after {
+        content: '\201D';
+      }
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include until-mobile {
+    flex-direction: column;
+  }
+
+  &__text {
+    @extend .text-20;
+    line-height: $line-height-heading;
+    color: inherit;
+    opacity: 0.699999988079071;
+
+    @include until-desktop-small {
+      font-size: $font-size-18;
+    }
+
+    @include until-tablet {
+      font-size: $font-size-16;
+    }
+  }
+
+  &__text+&__text::before {
+    @include mobile-wide {
+      content: '|';
+      display: inline-block;
+      padding: 0 8px;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+
+  @include until-desktop-wide {
+    gap: 20px;
+  }
+
+  @include until-desktop-small {
+    gap: 16px;
+  }
+
+  @include until-tablet {
+    flex-direction: column;
+    max-width: fit-content;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.animation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

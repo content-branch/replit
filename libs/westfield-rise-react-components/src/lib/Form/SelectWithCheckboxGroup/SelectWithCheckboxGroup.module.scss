@@ -1,0 +1,210 @@
+@import '../../styles/colours.scss';
+@import '../../styles/text-styles.module';
+
+.select_with_checkbox_group {
+  width: 100%;
+  color: $colour-primary-charcoal;
+
+  & .select_with_checkbox_group__label {
+    @extend .text-24;
+    margin-bottom: 24px;
+    display: flex;
+
+    @include until-desktop-wide {
+      font-size: $font-size-16;
+      margin-bottom: 16px;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-14;
+      margin-bottom: 12px;
+    }
+  }
+
+  & .select_with_checkbox_group__error {
+    @extend .text-16;
+    width: 100%;
+    color: $colour-primary-scarlet;
+    word-wrap: break-word;
+    line-height: 16px;
+    height: 24px;
+  }
+
+  .select_with_checkbox_group__dropdown {
+    min-width: fit-content;
+    padding: 24px;
+    border-radius: 6px;
+    border: 2px rgba($colour-primary-charcoal, 0.2) solid;
+
+    @include until-desktop-wide {
+      border-radius: 4px;
+      border-width: 1px;
+      padding: 16px;
+    }
+
+    @include until-desktop-small {
+      padding: 13px 16px;
+    }
+  }
+
+  .select_with_checkbox_group__message {
+    @extend .text-24;
+    max-height: 24px;
+    opacity: 0.6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: inherit;
+    width: 100%;
+
+    @include until-desktop-wide {
+      font-size: $font-size-16;
+      max-height: 20px;
+    }
+  }
+
+  & .select_with_checkbox_group__options {
+    @extend .text-16;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    padding-top: 10px;
+
+    @include until-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .select_with_checkbox_group__option {
+      display: flex;
+      align-items: center;
+      padding: 24px 12px;
+
+      @include until-desktop-wide {
+        padding: 16px 12px;
+      }
+
+      @include until-tablet {
+        padding: 12px 4px;
+      }
+
+      & .select_with_checkbox_group__option__input {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .select_with_checkbox_group__selected_options {
+    @extend .text-24;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include until-desktop-wide {
+      font-size: $font-size-16;
+      gap: 20px;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-14;
+      gap: 12px;
+    }
+
+    @include until-tablet {
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .select_with_checkbox_group__selected_options__option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      position: relative;
+      margin-top: 30px;
+      gap: 24px;
+
+      @include until-desktop-wide {
+        margin-top: 20px;
+        gap: 16px;
+        padding: 8px 16px;
+      }
+
+      @include until-desktop-small {
+        gap: 12px;
+        padding: 6px 12px;
+      }
+
+      @include until-tablet {
+        margin-top: 0;
+      }
+
+      &:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 6px;
+        border: 2px solid transparent;
+        background: $gradient-candy-ultraviolet border-box;
+        transition: opacity 0.3s ease-in-out;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+
+        @include until-desktop-wide {
+          border-width: 1px;
+        }
+      }
+
+      .select_with_checkbox_group__selected_options__option__remove {
+        cursor: pointer;
+        z-index: 1;
+
+        svg {
+          @include until-desktop-wide {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+    }
+
+    .select_with_checkbox_group__selected_options__clear_button {
+      padding: 8px 0;
+      margin-top: 30px;
+      color: $colour-primary-charcoal;
+      cursor: pointer;
+      position: relative;
+
+      @include until-desktop-wide {
+        margin-top: 20px;
+      }
+
+      @include until-tablet {
+        margin-top: 0;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $colour-primary-charcoal;
+        position: absolute;
+        bottom: 10px;
+
+        @include until-desktop-wide {
+          height: 1px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "formSteps": {
+    "label": "Form Steps",
+    "options": [
+      {
+        "label": "Contact",
+        "value": "contact",
+        "description": "Contact information"
+      },
+      {
+        "label": "Industry",
+        "value": "industry",
+        "description": "Industries you are interested in"
+      },
+      {
+        "label": "Market",
+        "value": "market",
+        "description": "Countries of interest"
+      },
+      {
+        "label": "Service",
+        "value": "service",
+        "description": "Services you are interested in"
+      }
+    ]
+  },
+  "firstName": {
+    "label": "First name",
+    "placeholder": "First name",
+    "errorMessages": ["First name is required"]
+  },
+  "lastName": {
+    "label": "Last name",
+    "placeholder": "Last name",
+    "errorMessages": ["Last name is required"]
+  },
+  "jobTitle": {
+    "label": "Job title (Optional)",
+    "placeholder": "Job Title"
+  },
+  "companyName": {
+    "label": "Company name",
+    "placeholder": "Company name",
+    "errorMessages": ["Company name is required"]
+  },
+  "agreeWithTerms": {
+    "label": "I agree with the terms and conditions",
+    "errorMessages": ["Invalid option"]
+  },
+  "industries": {
+    "label": "Select at least one industry",
+    "errorMessages": ["Please select at least one industry"],
+    "options": [
+      {
+        "label": "Telecommunications",
+        "value": "telecommunications",
+        "variant": "outlined"
+      },
+      {
+        "label": "Technology",
+        "value": "technology",
+        "variant": "outlined"
+      },
+      {
+        "label": "FMCG",
+        "value": "fmcg",
+        "variant": "outlined"
+      },
+      {
+        "label": "Utilities",
+        "value": "utilities",
+        "variant": "outlined"
+      },
+      {
+        "label": "Real Estate",
+        "value": "real-estate",
+        "variant": "outlined"
+      },
+      {
+        "label": "Automotive",
+        "value": "automotive",
+        "variant": "outlined"
+      },
+      {
+        "label": "Healthcare",
+        "value": "healthcare",
+        "variant": "outlined"
+      },
+      {
+        "label": "Financial",
+        "value": "financial",
+        "variant": "outlined"
+      },
+      {
+        "label": "Entertainment",
+        "value": "entertainment",
+        "variant": "outlined"
+      },
+      {
+        "label": "Leisure & Tourism",
+        "value": "leisure-tourism",
+        "variant": "outlined"
+      }
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "errorMessages": ["Please select at least one service"],
+    "options": [
+      {
+        "label": "Experiential",
+        "value": "experiential",
+        "variant": "outlined"
+      },
+      {
+        "label": "Event Sponsorship",
+        "value": "event-sponsorship",
+        "variant": "outlined"
+      },
+      {
+        "label": "Brand Partnerships",
+        "value": "brand-partnerships",
+        "variant": "outlined"
+      },
+      {
+        "label": "Digital Out of Home",
+        "value": "digital-out-of-home",
+        "variant": "outlined"
+      },
+      {
+        "label": "Non Digital Out of Home",
+        "value": "non-digital-out-of-home",
+        "variant": "outlined"
+      },
+      {
+        "label": "Digital Services",
+        "value": "digital-services",
+        "variant": "outlined"
+      }
+    ]
+  },
+  "countries": {
+    "label": "Country",
+    "placeholder": "Select country...",
+    "errorMessages": ["Please select at least one country"],
+    "options": [
+      {
+        "label": "Austria",
+        "value": "AU:47,48"
+      },
+      {
+        "label": "Czech Republic",
+        "value": "CZ:12,19"
+      },
+      {
+        "label": "Denmark",
+        "value": "DK:27,41"
+      },
+      {
+        "label": "France",
+        "value": "FR:4,2"
+      },
+      {
+        "label": "Germany",
+        "value": "DE:37,38"
+      },
+      {
+        "label": "Netherlands",
+        "value": "NL:29,30"
+      },
+      {
+        "label": "Poland",
+        "value": "PL:33,35"
+      },
+      {
+        "label": "Slovakia",
+        "value": "SK:12,19"
+      },
+      {
+        "label": "Spain",
+        "value": "ES:23,25"
+      },
+      {
+        "label": "Sweden",
+        "value": "SE:27,41"
+      },
+      {
+        "label": "UK",
+        "value": "UK:7,15"
+      },
+      {
+        "label": "USA",
+        "value": "US:43,45"
+      }
+    ]
+  },
+  "previous": {
+    "label": "Previous"
+  },
+  "next": {
+    "label": "Next"
+  }
+}

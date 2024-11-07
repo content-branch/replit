@@ -1,0 +1,42 @@
+@import '../styles/text-styles.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f5f5f5;
+  padding: 90px 0;
+
+  @include until-desktop-wide {
+    padding: 60px;
+  }
+
+  @include until-desktop-small {
+    padding: 40px;
+  }
+
+  @include until-tablet {
+    padding: 40px 16px;
+  }
+
+  .description {
+    width: 80%;
+    margin: 0 auto;
+    @extend .text-24;
+    font-size: 27px;
+    opacity: 0.6000000238418579;
+
+    @include until-desktop-wide {
+      font-size: $font-size-18;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-16;
+      width: 100%;
+    }
+
+    sup {
+      padding-right: 5px;
+    }
+  }
+}

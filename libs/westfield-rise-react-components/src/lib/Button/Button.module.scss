@@ -1,0 +1,241 @@
+@import '../styles/text-styles.module.scss';
+
+@mixin before__after($type, $zIndex, $opacity) {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: inherit;
+  z-index: $zIndex;
+  opacity: $opacity;
+
+  @if ($type == 'primary') {
+    background: $gradient-h-ultraviolet-candy border-box;
+    transition: opacity 0.3s ease-in-out;
+  } @else if ($type == 'secondary') {
+    border: 1px solid transparent;
+    background: $colour-primary-charcoal border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+}
+
+.button {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  position: relative;
+  border-radius: 100px;
+  padding: 36px 60px;
+
+  &.button--disabled {
+    color: gray;
+    pointer-events: none;
+  }
+
+  @include until-desktop-wide {
+    padding: 24px 40px;
+  }
+
+  @include until-desktop-small {
+    padding: 18px 36px;
+    border-width: 1px;
+  }
+
+  @include until-tablet {
+    justify-content: center;
+  }
+
+  .icon {
+    z-index: 1;
+
+    @include until-desktop-small {
+      height: 13px;
+      width: auto;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--default {
+    min-width: 255px;
+    justify-content: center;
+
+    @include until-desktop-wide {
+      min-width: 170px;
+    }
+
+    @include until-tablet {
+      min-width: unset;
+    }
+  }
+
+  &--primary {
+    border: none;
+    background: $colour-primary-charcoal;
+    color: $colour-primary-white;
+    transition: color 0.3s ease-in-out;
+
+    &::after {
+      @include before__after('primary', 0, 0);
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    .icon {
+      stroke: $colour-primary-white;
+    }
+
+    &.button--white {
+      background: $colour-primary-white;
+      color: $colour-primary-charcoal;
+
+      .icon {
+        stroke: $colour-primary-charcoal;
+      }
+
+      &:hover {
+        color: $colour-primary-white;
+
+        .icon {
+          stroke: $colour-primary-white;
+        }
+      }
+    }
+  }
+
+  &--secondary {
+    border: none;
+    background: transparent;
+    color: $colour-primary-charcoal;
+
+    &::before {
+      @include before__after('secondary', 0, 1);
+    }
+
+    &::after {
+      @include before__after('secondary', 0, 0);
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .icon {
+      stroke: $colour-primary-charcoal;
+
+      @include desktop-wide {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &.button--white {
+      color: $colour-primary-white;
+
+      &::before,
+      &::after {
+        background: $colour-primary-white border-box;
+      }
+
+      .icon {
+        stroke: $colour-primary-white;
+      }
+    }
+
+    &:hover::after {
+      opacity: 1;
+      border-width: 6px;
+      background: transparent $gradient-h-ultraviolet-candy border-box;
+
+      @include until-desktop-wide {
+        border-width: 4px;
+      }
+
+      @include until-desktop-small {
+        border-width: 3.2px;
+      }
+    }
+  }
+
+  &--icon {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  &--external {
+    &:hover {
+      svg {
+        @extend .move-diagonally-up;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    color: inherit;
+    @extend .text-28;
+    font-size: 26px;
+    line-height: normal;
+
+    @include until-desktop-wide {
+      font-size: $font-size-20;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-16;
+    }
+  }
+}
+
+.link {
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  font: inherit;
+}
+
+.button__popup_content_wrapper {
+  background-image: url('../assets/img/logo-small-for-headings.png');
+  background-color: $colour-primary-white;
+  background-repeat: no-repeat;
+  background-position: 142.5px 120px;
+  background-size: 109px 62px;
+  padding: calc(142.5px + 62px) 142.5px 120px 142.5px;
+
+  @include until-desktop-wide {
+    background-position: 95px 80px;
+    background-size: 73px 41px;
+    padding: calc(95px + 41px) 95px 80px 95px;
+  }
+
+  @include until-desktop-small {
+    background-position: 61px 60px;
+    background-size: 60px 34px;
+    padding: calc(61px + 34px) 61px 60px 61px;
+  }
+
+  @include until-tablet {
+    background-position: 20px 40px;
+    background-size: 50px 28px;
+    padding: calc(40px + 28px) 20px 40px 20px;
+  }
+}

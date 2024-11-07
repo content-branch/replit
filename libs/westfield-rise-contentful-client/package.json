@@ -1,0 +1,14 @@
+{
+  "name": "@westfield-rise/westfield-rise-contentful-client",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "scripts": {
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  }
+}

@@ -1,0 +1,234 @@
+@import '../../../libs/westfield-rise-react-components/src/lib/styles/text-styles.module.scss';
+@import '../../../libs/westfield-rise-react-components/src/lib/styles/breakpoints.scss';
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: $colour-primary-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 39px 0px 48px 0px;
+
+  @include until-desktop-wide {
+    padding: 26px 0px 32px 0px;
+  }
+
+  @include until-desktop-small {
+    height: 80px;
+    padding: 12px 36px;
+  }
+
+  @include until-tablet {
+    padding: 12px;
+  }
+
+  &__logo {
+    img {
+      width: 142.5px;
+      height: 63px;
+      object-fit: contain;
+
+      @include until-desktop-wide {
+        width: 95px;
+        height: 42px;
+      }
+    }
+  }
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 180px;
+  overflow: hidden;
+
+  @include until-desktop-small {
+    padding-bottom: 120px;
+  }
+
+  @include until-desktop-small {
+    padding: 0 40px 80px 40px;
+  }
+
+  @include until-tablet {
+    padding: 0 16px 60px 16px;
+  }
+
+  &__inner {
+    background-color: $colour-primary-white;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    max-width: 1395px;
+    padding: 90px 142.5px;
+
+    @include until-desktop-wide {
+      gap: 40px;
+      max-width: 930px;
+      padding: 60px 95px;
+    }
+
+    @include until-desktop-small {
+      max-width: unset;
+      padding: 50px 38px;
+    }
+
+    @include until-tablet {
+      gap: 25px;
+      padding: 40px 16px 60px 16px;
+    }
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    @include until-desktop-wide {
+      gap: 25px;
+    }
+
+    @include until-desktop-small {
+      gap: 24px;
+    }
+
+    @include until-tablet {
+      gap: 20px;
+    }
+
+    .error {
+      @extend .display-l;
+      @include until-desktop-wide {
+        font-size: $font-size-80;
+      }
+
+      @include until-desktop-small {
+        font-size: $font-size-60;
+      }
+
+      @include until-tablet {
+        font-size: $font-size-48;
+      }
+    }
+    .description {
+      @extend .text-28;
+      font-size: 33px;
+      text-align: center;
+
+      @include until-desktop-wide {
+        font-size: $font-size-22;
+      }
+
+      @include until-desktop-small {
+        font-size: $font-size-20;
+      }
+
+      @include until-tablet {
+        font-size: $font-size-18;
+      }
+    }
+  }
+
+  .gradient-svg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .title {
+    text-align: center;
+    @extend .display-s;
+    font-size: 90px;
+    max-width: 1185px;
+    margin: 120px auto;
+
+    @include until-desktop-wide {
+      max-width: 790px;
+      font-size: 60px;
+      margin: 80px auto;
+    }
+
+    @include until-desktop-small {
+      max-width: 688px;
+      font-size: $font-size-48;
+      margin: 60px auto;
+    }
+
+    @include until-tablet {
+      font-size: $font-size-32;
+      margin: 48px 0;
+    }
+  }
+}
+
+.footer {
+  background-color: $colour-primary-white;
+  align-self: flex-end;
+  display: flex;
+  width: 100%;
+  height: 150px;
+  padding: 0px 119.5px 0px 120px;
+  justify-content: space-between;
+  align-items: center;
+  @extend .text-24;
+  opacity: 0.5;
+
+  @include until-desktop-wide {
+    height: 100px;
+    padding: 0px 80px;
+    font-size: 16px;
+  }
+
+  @include until-desktop-small {
+    height: 80px;
+    padding: 0px 40px;
+    font-size: 14px;
+  }
+
+  @include until-tablet {
+    height: auto;
+    padding: 40px 0;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+  }
+
+  &__links {
+    display: flex;
+    gap: 60px;
+
+    @include until-desktop-wide {
+      gap: 40px;
+    }
+
+    @include until-desktop-small {
+      gap: 20px;
+    }
+
+    @include until-tablet {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+}

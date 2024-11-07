@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'GT Flexa';
+  src: local('GT Flexa'),
+    url('/fonts/GT-Flexa-Extended-Light.otf') format('opentype'),
+    url('/fonts/GT-Flexa-Extended-Light.woff2') format('woff2'),
+    url('/fonts/GT-Flexa-Extended-Light.woff') format('woff'),
+    url('/fonts/GT-Flexa-Extended-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'GT Flexa';
+  src: local('GT Flexa'),
+    url('/fonts/GT-Flexa-Extended-Medium.otf') format('opentype'),
+    url('/fonts/GT-Flexa-Extended-Medium.woff2') format('woff2'),
+    url('/fonts/GT-Flexa-Extended-Medium.woff') format('woff'),
+    url('/fonts/GT-Flexa-Extended-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: local('DM Sans'),
+    url('/fonts/DMSans-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: local('DM Sans'),
+    url('/fonts/DMSans-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}

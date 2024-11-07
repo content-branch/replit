@@ -1,0 +1,25 @@
+@import '../styles/breakpoints.scss';
+
+$padding-xlarge: 60px;
+$padding-large: 60px;
+$padding-medium: 60px;
+$padding-small: 48px;
+$padding-small-vertical: 16px;
+
+$padding-desktop-wide: $padding-xlarge 0;
+$padding-desktop-small: $padding-large 0;
+$padding-tablet: $padding-medium 0;
+$padding-mobile: $padding-small $padding-small-vertical;
+
+.centered-container {
+  @include tablet-wide {
+    max-width: 688px;
+    margin: 0 auto;
+  }
+  @include desktop-small {
+    max-width: 740px;
+  }
+  @include desktop-wide {
+    max-width: 1110px;
+  }
+}

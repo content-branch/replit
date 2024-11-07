@@ -1,0 +1,204 @@
+@import '../styles/text-styles.module';
+@import '../styles/colours';
+@import '../styles/breakpoints';
+
+.custom_radio {
+  & + label {
+    @extend .text-24;
+
+    @include until-desktop-wide {
+      font-size: $font-size-16;
+    }
+  }
+}
+
+.custom_radio:checked,
+.custom_radio:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.custom_radio:checked + label,
+.custom_radio:not(:checked) + label {
+  position: relative;
+  padding-left: 48px;
+  cursor: pointer;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include until-desktop-wide {
+    padding-left: 32px;
+    line-height: 20px;
+  }
+}
+
+.custom_radio + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: #fff;
+
+  @include until-desktop-wide {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.custom_radio:not(:checked) + label:before {
+  border: 2px solid rgba($colour-primary-charcoal, 0.2);
+
+  @include until-desktop-wide {
+    border-width: 1px;
+  }
+}
+
+.custom_radio:checked + label:before {
+  border: 2px solid transparent;
+  background: $gradient-candy-ultraviolet border-box;
+  transition: opacity 0.3s ease-in-out;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  @include until-desktop-wide {
+    border-width: 1px;
+  }
+}
+
+.custom_radio:checked + label:after,
+.custom_radio:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: $gradient-candy-ultraviolet;
+  position: absolute;
+  left: 9px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+
+  @include until-desktop-wide {
+    width: 8px;
+    height: 8px;
+    left: 6px;
+  }
+}
+
+.custom_radio:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.custom_radio:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.custom_checkbox {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  + label {
+    @extend .text-24;
+    line-height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
+
+    @include until-desktop-wide {
+      line-height: 20px;
+      gap: 12px;
+      font-size: $font-size-16;
+    }
+
+    svg {
+      height: 0;
+      width: 21px;
+      position: absolute;
+      left: 5px;
+      stroke-dasharray: 33;
+
+      @include until-desktop-wide {
+        left: 3px;
+        width: 14px;
+      }
+    }
+
+    &:before {
+      content: '';
+      height: 30px;
+      width: 30px;
+      display: flex;
+      flex-shrink: 0;
+      border: 2px solid rgba($colour-primary-charcoal, 0.2);
+      border-radius: 9px;
+      transition: 0.15s all ease-out;
+
+      @include until-desktop-wide {
+        border-radius: 6px;
+      }
+
+      @include until-desktop-wide {
+        height: 20px;
+        width: 20px;
+        border-width: 1px;
+      }
+    }
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &:checked + label {
+    &:before {
+      z-index: -1;
+      opacity: 1;
+      border: 2px solid transparent;
+      background: $gradient-candy-ultraviolet border-box;
+      transition: opacity 0.3s ease-in-out;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      transition: opacity 0.3s ease-in-out;
+
+      @include until-desktop-wide {
+        border-width: 1px;
+      }
+    }
+  }
+
+  &:checked + label > svg {
+    height: 21px;
+    animation: draw-checkbox ease-in-out 0.2s forwards;
+
+    @include until-desktop-wide {
+      height: 14px;
+    }
+  }
+}

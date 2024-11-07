@@ -1,0 +1,47 @@
+@import './font-face.scss';
+
+$font-size-14: 14px;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-20: 20px;
+$font-size-22: 22px;
+$font-size-24: 24px;
+$font-size-28: 28px;
+$font-size-32: 32px;
+$font-size-36: 36px;
+$font-size-48: 48px;
+$font-size-60: 60px;
+$font-size-72: 72px;
+$font-size-80: 80px;
+$font-size-100: 100px;
+
+$line-height-heading: 130%;
+$line-height-text: 150%;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+
+@mixin gt-flexa-light {
+  font-family: 'GT Flexa', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: $line-height-heading;
+}
+
+@mixin gt-flexa-medium {
+  font-family: 'GT Flexa', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: $line-height-heading;
+}
+
+@mixin dm-sans-regular {
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: $line-height-text;
+}
+
+@mixin dm-sans-medium {
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: $line-height-heading;
+}

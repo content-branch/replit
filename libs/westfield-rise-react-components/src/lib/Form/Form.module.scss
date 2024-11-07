@@ -1,0 +1,95 @@
+@import '../styles/text-styles.module';
+
+.field_input__error {
+  @extend .text-24;
+  width: 100%;
+  color: $colour-primary-scarlet;
+  word-wrap: break-word;
+  line-height: 1;
+
+  @include until-desktop-wide {
+    font-size: $font-size-16;
+  }
+
+  @include until-desktop-small {
+    font-size: $font-size-14;
+  }
+}
+
+.form__step {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+
+  @include until-desktop-wide {
+    gap: 60px;
+  }
+
+  @include until-desktop-small {
+    gap: 40px;
+  }
+
+  h3 {
+    @include until-tablet {
+      font-size: $font-size-20;
+    }
+  }
+
+  & .form__step__title {
+    font-weight: bolder;
+  }
+
+  & .form__step__form_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 60px;
+
+    @include until-desktop-wide {
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    @include until-desktop-small {
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    @include until-tablet {
+      flex-direction: column;
+      gap: 28px;
+
+      &:last-child {
+        flex-direction: row;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > button {
+      margin-top: 30px;
+
+      @include until-tablet {
+        margin-top: 12px;
+      }
+
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+
+    .button--primary {
+      margin-left: auto;
+    }
+  }
+
+  & .form__step__form_actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

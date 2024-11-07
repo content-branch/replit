@@ -1,0 +1,22 @@
+@import './colours.scss';
+
+$themes: (
+  'peacock': $colour-primary-peacock $colour-primary-canary
+    $colour-primary-ultraviolet,
+  'ultraviolet': $colour-primary-ultraviolet $colour-primary-peacock
+    $colour-primary-canary,
+  'candy': $colour-primary-candy $colour-primary-ultraviolet
+    $colour-primary-scarlet,
+  'scarlet': $colour-primary-scarlet $colour-primary-candy
+    $colour-primary-ultraviolet,
+  'canary': $colour-primary-canary $colour-primary-ultraviolet
+    $colour-primary-tangerine,
+  'tangerine': $colour-primary-tangerine $colour-primary-canary
+    $colour-primary-ultraviolet,
+);
+
+:export {
+  @each $name, $theme in $themes {
+    #{$name}: $theme;
+  }
+}

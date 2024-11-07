@@ -1,0 +1,167 @@
+@import '../../styles/text-styles.module.scss';
+
+.newsletter {
+  &__container {
+    background: #fbfbfb;
+    padding: 120px;
+    position: relative;
+
+    @include until-desktop-wide {
+      padding: 80px;
+    }
+
+    @include until-desktop-small {
+      padding: 48px 40px 60px 40px;
+    }
+
+    @include until-tablet {
+      padding: 40px 16px 48px 16px;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      display: block;
+      height: 12px;
+      background: linear-gradient(
+        90deg,
+        $colour-primary-ultraviolet 0%,
+        $colour-primary-candy 100%
+      );
+
+      @include until-desktop-wide {
+        height: 8px;
+      }
+
+      @include until-desktop-small {
+        height: 6px;
+      }
+    }
+
+    &_inner {
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+      gap: 170px;
+
+      @include until-desktop-wide {
+        gap: 115px;
+      }
+
+      @include until-desktop-small {
+        flex-direction: column;
+        gap: 40px;
+        align-items: start;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 680px;
+    @extend .heading-2;
+
+    @include until-desktop-wide {
+      max-width: 455px;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-28;
+      max-width: 100%;
+    }
+
+    @include until-tablet {
+      font-size: $font-size-24;
+    }
+  }
+
+  &__input_wrapper {
+    border-bottom: 1px solid $colour-primary-charcoal;
+    flex-grow: 1;
+
+    @include until-desktop-small {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__input {
+    @include dm-sans-regular();
+    font-size: 42px;
+    border: 0 none;
+    background-color: transparent;
+    width: 100%;
+    padding: 35px 105px 35px 0;
+    outline: none;
+    box-sizing: border-box;
+
+    @include until-desktop-wide {
+      font-size: 28px;
+      padding: 24px 80px 24px 0;
+    }
+
+    @include until-desktop-small {
+      font-size: 24px;
+      padding: 20px 60px 20px 0;
+    }
+
+    @include until-tablet {
+      font-size: $font-size-18;
+      padding: 16px 40px 16px 0;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 0;
+    border: 0 none;
+    background-color: transparent;
+    padding: 30px;
+    cursor: pointer;
+
+    @include until-desktop-wide {
+      padding: 20px;
+    }
+
+    @include until-tablet {
+      padding: 20px 12px;
+    }
+
+    svg {
+      width: 42px;
+      height: 42px;
+
+      @include until-desktop-wide {
+        width: 28px;
+        height: 28px;
+      }
+
+      @include until-tablet {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &:hover {
+      svg {
+        @extend .move-right;
+      }
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    color: $colour-primary-scarlet;
+    @extend .text-16;
+  }
+}

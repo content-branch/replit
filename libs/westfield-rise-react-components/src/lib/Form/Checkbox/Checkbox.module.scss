@@ -1,0 +1,76 @@
+@import '../../styles/text-styles.module';
+
+.checkbox_wrapper {
+  border-radius: 6px;
+  background: white;
+  border: 2px rgba($colour-primary-charcoal, 0.2) solid;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+
+  @include until-desktop-wide {
+    padding: 16px;
+    border-radius: 4px;
+    font-size: $font-size-16;
+    border-width: 1px;
+  }
+
+  &.checkbox_wrapper__simple {
+    border: 0 none;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:has(> :checked) {
+      &::after {
+        display: none;
+        opacity: 0;
+      }
+    }
+  }
+
+  .field_input__error {
+    @extend .text-16;
+    width: 100%;
+    color: $colour-primary-scarlet;
+    word-wrap: break-word;
+    line-height: 1;
+    position: absolute;
+    bottom: -8px;
+  }
+
+  &:has(> :checked) {
+    border-color: transparent;
+
+    &::after {
+      margin: -2px;
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 1;
+      border: 2px solid transparent;
+      background: $gradient-candy-ultraviolet border-box;
+      transition: opacity 0.3s ease-in-out;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+
+
+}

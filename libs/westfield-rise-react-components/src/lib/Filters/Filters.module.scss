@@ -1,0 +1,83 @@
+@import '../styles/accordionStyles.scss';
+@import '../styles/text-styles.module';
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: stretch;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .accordion {
+    padding: 30px 50px;
+
+    @include until-desktop-wide {
+      padding: 20px 33px;
+    }
+  }
+
+  .filters__actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px 60px;
+    gap: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    @include until-desktop-wide {
+      padding: 20px 33px 40px;
+    }
+
+    @include until-mobile {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .filters__title {
+    @extend .heading-2;
+    font-size: $font-size-36;
+    text-align: center;
+
+    @include until-desktop-wide {
+      font-size: $font-size-24;
+    }
+  }
+
+  .filter__options_wrapper {
+    padding-left: 16px;
+  }
+
+  .filter__group__title {
+    @extend .heading-4;
+
+    @include until-desktop-wide {
+      font-size: $font-size-16;
+    }
+
+    .hidden_icon {
+      visibility: hidden;
+      height: 0;
+    }
+  }
+
+  & > .szh-accordion {
+    &__item {
+      &-panel {
+        padding: 10px 10px 10px;
+
+        @include until-desktop-small {
+          padding: 10px 10px 10px;
+        }
+
+        @include until-tablet {
+          padding: 10px 10px 10px;
+        }
+      }
+    }
+  }
+}

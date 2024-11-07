@@ -1,0 +1,315 @@
+@import '../styles/text-styles.module.scss';
+
+$bottom-position: 30px;
+
+.container {
+  padding: 0 0 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  align-items: center;
+
+  @include until-desktop-wide {
+    padding: 0 80px 90px;
+    gap: 60px;
+  }
+
+  @include until-desktop-small {
+    padding: 0 40px 80px;
+    gap: 40px;
+  }
+
+  @include until-tablet {
+    padding: 0 16px 60px;
+  }
+}
+
+.container_inner {
+  background-color: $colour-primary-white;
+  padding: 40px;
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+
+  @include until-desktop-wide {
+    max-width: 1120px;
+  }
+
+  @include until-desktop-small {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  @include until-tablet {
+    padding: 20px 16px 40px;
+  }
+}
+
+.image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 660px;
+
+  @include until-desktop-wide {
+    height: 440px;
+  }
+
+  .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    @include until-tablet {
+      aspect-ratio: 4/5;
+    }
+  }
+}
+
+.region-name {
+  position: absolute;
+  bottom: $bottom-position;
+  width: 500px;
+  text-align: center;
+  z-index: 1;
+  @extend .heading-3;
+  height: 44px;
+  line-height: 44px;
+  overflow: visible;
+
+  @include until-desktop-wide {
+    width: 400px;
+  }
+
+  @include until-desktop-small {
+    font-size: $font-size-18;
+    width: 300px;
+  }
+
+  @include until-tablet {
+    font-size: $font-size-16;
+    width: 180px;
+  }
+}
+
+.swiper-navigation {
+  position: absolute;
+  bottom: $bottom-position;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 500px;
+
+  @include until-desktop-wide {
+    gap: 400px;
+  }
+
+  @include until-desktop-small {
+    gap: 300px;
+  }
+
+  @include until-tablet {
+    gap: 180px;
+  }
+}
+
+.area-container {
+  display: flex;
+  margin-top: 40px;
+
+  @include until-tablet {
+    margin-top: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: $colour-primary-white;
+    min-height: 300px;
+
+    @include until-desktop-wide {
+      min-height: 193px;
+    }
+
+    @include until-desktop-small {
+      min-height: 167px;
+    }
+
+    @include until-tablet {
+      width: 100%;
+    }
+
+    &__name {
+      @extend .heading-3;
+      padding: 42px 20px;
+      opacity: 0.5;
+
+      @include until-desktop-small {
+        font-size: $font-size-18;
+      }
+
+      @include until-tablet {
+        font-size: $font-size-16;
+      }
+
+      &.active,
+      &:hover {
+        opacity: 1;
+        background: #f5f5f5;
+        cursor: pointer;
+      }
+
+      span + span::before {
+        content: ' ';
+      }
+    }
+  }
+}
+
+.accordion-wrapper {
+  &__list {
+    &__name {
+      @extend .heading-3;
+
+      @include until-desktop-small {
+        font-size: $font-size-18;
+      }
+
+      @include until-tablet {
+        font-size: $font-size-16;
+      }
+
+      span + span::before {
+        content: ' ';
+      }
+    }
+  }
+}
+
+.location-container__list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background: #f5f5f5;
+  padding: 30px 28px 30px 40px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  min-height: 300px;
+
+  @include until-desktop-wide {
+    min-height: 193px;
+  }
+
+  @include until-desktop-small {
+    min-height: 167px;
+  }
+
+  @include until-tablet {
+    width: 100%;
+    padding: 24px 16px;
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 28px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 100px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 10px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    background-color: #c1c1c1;
+  }
+
+  &__item {
+    padding: 12px 0;
+
+    @include until-desktop-wide {
+      padding: 8px 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        max-width: calc(100% - 15px);
+      }
+
+      & > svg {
+        stroke: $colour-primary-charcoal;
+      }
+
+      &:hover {
+        svg {
+          @extend .move-diagonally-up;
+        }
+      }
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    &__name {
+      @extend .text-24;
+
+      @include until-desktop-small {
+        font-size: $font-size-16;
+      }
+    }
+
+    &__center {
+      @extend .text-16;
+      line-height: $line-height-heading;
+      text-transform: uppercase;
+
+      @include until-desktop-small {
+        font-size: $font-size-14;
+      }
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+
+  @include until-desktop-wide {
+    gap: 20px;
+  }
+
+  @include until-desktop-small {
+    gap: 12px;
+  }
+
+  @include until-tablet {
+    flex-direction: column;
+    max-width: fit-content;
+
+    button {
+      width: 100%;
+    }
+  }
+}

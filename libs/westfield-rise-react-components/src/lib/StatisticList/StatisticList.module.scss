@@ -1,0 +1,58 @@
+@import '../styles/spacing.scss';
+@import '../styles/text-styles.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  &--full {
+    @extend .centered-container;
+    padding: 60px 0;
+
+    div[class^='PageKeyInformation'] + & {
+      padding: 60px 0;
+    }
+
+    div[class^='BodyCopy'] + & {
+      padding-top: 0;
+    }
+
+    @include until-desktop-wide {
+      padding: 60px 0;
+
+      div[class^='PageKeyInformation'] + & {
+        padding: 25px 0;
+
+        @include until-tablet {
+          padding: 25px 16px;
+        }
+      }
+    }
+
+    @include until-desktop-small {
+      padding: 40px 0;
+    }
+
+    @include until-tablet {
+      padding: 40px 16px;
+    }
+  }
+}
+
+.title {
+  @extend .heading-2;
+  text-align: center;
+  margin-bottom: 120px;
+
+  @include until-desktop-wide {
+    margin-bottom: 80px;
+  }
+
+  @include until-desktop-small {
+    margin-bottom: 60px;
+  }
+
+  @include until-tablet {
+    margin-bottom: 40px;
+  }
+}

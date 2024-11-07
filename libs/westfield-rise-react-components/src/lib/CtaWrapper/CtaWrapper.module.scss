@@ -1,0 +1,23 @@
+@import '../styles/text-styles.module.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 75px 120px 90px;
+    padding:20px;
+
+    @include until-desktop-wide {
+      margin: 100px 80px 120px;
+    }
+  
+    @include until-desktop-small {
+      margin: 60px 40px 80px;
+    }
+  
+    @include until-tablet {
+      margin: 48px 16px 60px;
+    }
+
+    // background-color: #fff;
+  }

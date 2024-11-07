@@ -1,0 +1,25 @@
+@import '../../styles/text-styles.module';
+@import '../../styles/breakpoints.scss';
+
+.contact_form {
+  width: 1395px;
+  padding: 90px 140px;
+  background: white;
+  flex-direction: column;
+  display: inline-flex;
+
+  @include until-desktop-wide {
+    width: 930px;
+    padding: 60px 95px;
+  }
+
+  @include until-desktop-small {
+    width: 690px;
+    padding: 40px;
+  }
+
+  @include until-tablet {
+    width: 100%;
+    padding: 28px 16px 40px 16px;
+  }
+}

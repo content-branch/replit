@@ -1,0 +1,173 @@
+{
+  "formSteps": {
+    "label": "Form Steps",
+    "options": [
+      {
+        "label": "Contact",
+        "value": "contact",
+        "description": "About you"
+      },
+      {
+        "label": "Services",
+        "value": "Services",
+        "description": "Services you are interested in"
+      },
+      {
+        "label": "Market",
+        "value": "Market",
+        "description": "Country of interest"
+      },
+      {
+        "label": "Detail",
+        "value": "Detail",
+        "description": "Would you like to tell us more"
+      }
+    ]
+  },
+  "firstName": {
+    "label": "First Name",
+    "placeholder": "First Name",
+    "errorMessages": ["First name is required"]
+  },
+  "lastName": {
+    "label": "Last Name",
+    "placeholder": "Last Name",
+    "errorMessages": ["Last name is required"]
+  },
+  "jobTitle": {
+    "label": "Job Title (Optional)",
+    "placeholder": "Job Title"
+  },
+  "companyName": {
+    "label": "Company name",
+    "placeholder": "Company name",
+    "errorMessages": ["Company name is required"]
+  },
+  "optIntoMarketing": {
+    "label": "Opt into marketing",
+    "placeholder": "Opt into marketing",
+    "errorMessages": ["Please select an option"],
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "placeholder": "Services",
+    "errorMessages": ["Please select at least one service"],
+    "options": [
+      {
+        "label": "Experiential",
+        "value": "experiential",
+        "variant": "outlined"
+      },
+      {
+        "label": "Event Sponsorship",
+        "value": "event-sponsorship",
+        "variant": "outlined"
+      },
+      {
+        "label": "Brand Partnerships",
+        "value": "brand-partnerships",
+        "variant": "outlined"
+      },
+      {
+        "label": "Digital Out of Home",
+        "value": "digital-out-of-home",
+        "variant": "outlined"
+      },
+      {
+        "label": "Non Digital Out of Home",
+        "value": "non-digital-out-of-home",
+        "variant": "outlined"
+      },
+      {
+        "label": "Digital Services",
+        "value": "digital-services",
+        "variant": "outlined"
+      }
+    ]
+  },
+  "phone": {
+    "label": "Phone (Optional)",
+    "placeholder": "Phone"
+  },
+  "email": {
+    "label": "Email",
+    "placeholder": "Email",
+    "errorMessages": ["Email is required", "Invalid email address"]
+  },
+  "countries": {
+    "label": "Country",
+    "placeholder": "Select country...",
+    "errorMessages": ["Please select at least one country"],
+    "options": [
+      {
+        "label": "Austria",
+        "value": "AU:47,48"
+      },
+      {
+        "label": "Czech Republic",
+        "value": "CZ:12,19"
+      },
+      {
+        "label": "Denmark",
+        "value": "DK:27,41"
+      },
+      {
+        "label": "France",
+        "value": "FR:4,2"
+      },
+      {
+        "label": "Germany",
+        "value": "DE:37,38"
+      },
+      {
+        "label": "Netherlands",
+        "value": "NL:29,30"
+      },
+      {
+        "label": "Poland",
+        "value": "PL:33,35"
+      },
+      {
+        "label": "Slovakia",
+        "value": "SK:12,19"
+      },
+      {
+        "label": "Spain",
+        "value": "ES:23,25"
+      },
+      {
+        "label": "Sweden",
+        "value": "SE:27,41"
+      },
+      {
+        "label": "UK",
+        "value": "UK:7,15"
+      },
+      {
+        "label": "USA",
+        "value": "US:43,45"
+      }
+    ]
+  },
+  "description": {
+    "label": "Description",
+    "placeholder": "Description",
+    "errorMessages": ["Message must be less than 500 characters"]
+  },
+  "previous": {
+    "label": "Previous"
+  },
+  "next": {
+    "label": "Next"
+  }
+}

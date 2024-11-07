@@ -1,0 +1,38 @@
+@import '../styles/colours.scss';
+@import '../styles/spacing.scss';
+@import '../styles/text-styles.module.scss';
+
+.container {
+  display: flex;
+  padding: 60px 10px;
+  margin: 48px auto;
+  align-items: center;
+  border-radius: 4px;
+  background: #f8f8f8;
+  @extend .centered-container;
+
+  @include until-desktop-small {
+    padding: 40px 10px;
+  }
+
+  @include until-tablet {
+    margin: 48px 16px;
+  }
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.link {
+  color: $colour-primary-black;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: underline;
+  cursor: pointer;
+  @include dm-sans-regular();
+}

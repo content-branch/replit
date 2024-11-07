@@ -1,0 +1,26 @@
+@import '../styles/breakpoints.scss';
+
+.swiper-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
+  padding-top: 48px;
+
+  @include until-desktop-small {
+    padding-right: 16px;
+  }
+
+  @include until-tablet {
+    padding-top: 32px;
+    padding-right: 0;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+}

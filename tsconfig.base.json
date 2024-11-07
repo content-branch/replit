@@ -1,0 +1,39 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@westfield-rise/brevo-service": ["libs/brevo-service/src/index.ts"],
+      "@westfield-rise/email-service": ["libs/email-service/src/index.ts"],
+      "@westfield-rise/pubsub-service": ["libs/pubsub-service/src/index.ts"],
+      "@westfield-rise/westfield-rise-backend-handlers": [
+        "libs/westfield-rise-backend-handlers/src/index.ts"
+      ],
+      "@westfield-rise/westfield-rise-backend-utils": [
+        "libs/westfield-rise-backend-utils/src/index.ts"
+      ],
+      "@westfield-rise/westfield-rise-contentful-client": [
+        "libs/westfield-rise-contentful-client/src/index.ts"
+      ],
+      "@westfield-rise/westfield-rise-react-components": [
+        "libs/westfield-rise-react-components/src/index.ts"
+      ],
+      "@westfield-rise/westfield-rise-trpc-server": [
+        "libs/westfield-rise-trpc-server/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

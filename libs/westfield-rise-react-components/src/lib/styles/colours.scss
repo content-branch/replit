@@ -1,0 +1,65 @@
+$colour-primary-charcoal: #3d3836;
+$colour-primary-white: #ffffff;
+$colour-primary-peacock: #1ce19f;
+$colour-primary-ultraviolet: #7a8cf0;
+$colour-primary-candy: #fa5e99;
+$colour-primary-scarlet: #fa4f38;
+$colour-primary-canary: #fcdb57;
+$colour-primary-tangerine: #ff833b;
+$colour-primary-black: #000000;
+
+$gradient-peacock-ultraviolet: linear-gradient(
+  180deg,
+  $colour-primary-peacock 0%,
+  $colour-primary-ultraviolet 100%
+);
+$gradient-ultraviolet-candy: linear-gradient(
+  180deg,
+  $colour-primary-ultraviolet 0%,
+  $colour-primary-candy 100%
+);
+$gradient-candy-canary: linear-gradient(
+  180deg,
+  $colour-primary-candy 0%,
+  $colour-primary-canary 100%
+);
+$gradient-tangerine-canary: linear-gradient(
+  180deg,
+  $colour-primary-tangerine 0%,
+  $colour-primary-canary 100%
+);
+$gradient-canary-peacock: linear-gradient(
+  180deg,
+  $colour-primary-canary 0%,
+  $colour-primary-peacock 100%
+);
+$gradient-tangerine-scarlet: linear-gradient(
+  180deg,
+  $colour-primary-tangerine 0%,
+  $colour-primary-scarlet 100%
+);
+$gradient-candy-scarlet: linear-gradient(
+  180deg,
+  $colour-primary-candy 0%,
+  $colour-primary-scarlet 100%
+);
+$gradient-ultraviolet-canary: linear-gradient(
+  180deg,
+  $colour-primary-ultraviolet 0%,
+  $colour-primary-canary 100%
+);
+$gradient-candy-peacock: linear-gradient(
+  180deg,
+  $colour-primary-candy 0%,
+  $colour-primary-peacock 100%
+);
+$gradient-candy-ultraviolet: linear-gradient(
+  90deg,
+  $colour-primary-candy 0%,
+  $colour-primary-ultraviolet 100%
+);
+$gradient-h-ultraviolet-candy: linear-gradient(
+  90deg,
+  $colour-primary-ultraviolet 0%,
+  $colour-primary-candy 100%
+);

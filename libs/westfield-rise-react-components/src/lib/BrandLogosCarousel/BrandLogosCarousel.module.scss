@@ -1,0 +1,34 @@
+@import '../styles/breakpoints.scss';
+
+.container {
+  padding: 54px 0;
+
+  @include until-desktop-small {
+    padding: 44px 0;
+  }
+
+  @include until-tablet {
+    padding: 40px 0;
+  }
+}
+
+.logo,
+.logo > img {
+  height: 60px;
+  width: auto;
+  max-width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+
+  @include until-desktop-wide {
+    height: 50px;
+  }
+
+  @include until-desktop-small {
+    height: 45px;
+  }
+
+  @include until-tablet {
+    height: 35px;
+  }
+}

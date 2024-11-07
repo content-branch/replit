@@ -1,0 +1,38 @@
+@import '../styles/spacing.scss';
+@import '../styles/text-styles.module.scss';
+@import '../styles/typography.scss';
+
+.container {
+  padding: 45px 0;
+  @include dm-sans-regular();
+  @extend .centered-container;
+
+  div[class^='Video'] + & {
+    padding-top: $padding-large;
+  }
+
+  @include until-desktop-small {
+    padding: 45px 0;
+
+    div[class^='Video'] + & {
+      padding-top: 45px;
+    }
+  }
+
+  @include until-tablet {
+    padding: $padding-small $padding-small-vertical $padding-medium;
+  }
+}
+
+.title {
+  font-size: $font-size-32;
+  font-weight: bold;
+}
+
+.legal-notice {
+  padding: 0px 0px 60px 0px;
+}
+
+.legal-notice-text {
+  gap: 0px;
+}

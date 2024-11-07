@@ -1,0 +1,105 @@
+{
+  "name": "westfield-rise",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/westfield-rise",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/westfield-rise"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/westfield-rise",
+          "sourceMap": true
+        },
+        "production": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "extractLicenses": true,
+          "dev": false,
+          "staticMarkup": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "westfield-rise:build:development"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "westfield-rise:build:development",
+          "dev": true,
+          "staticMarkup": true
+        },
+        "production": {
+          "buildTarget": "westfield-rise:build:production",
+          "dev": false,
+          "staticMarkup": true
+        }
+      }
+    },
+    "servepostbuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx nx run westfield-rise:serve"
+          },
+          {
+            "command": "node apps/westfield-rise/postbuild.js"
+          }
+        ],
+        "parallel": true
+      }
+    },
+    "export": {
+      "executor": "@nx/next:export",
+      "options": {
+        "buildTarget": "westfield-rise:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/westfield-rise/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/westfield-rise/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx build westfield-rise --development=true"
+      }
+    }
+  },
+  "tags": []
+}

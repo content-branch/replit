@@ -1,0 +1,52 @@
+@import '../../styles/text-styles.module';
+@import '../../styles/colours';
+
+.checkbox_list {
+  @extend .text-16;
+  width: 100%;
+
+  & .checkbox_list__options {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    @include until-desktop-wide {
+      gap: 20px;
+    }
+
+    @include until-desktop-small {
+      gap: 12px;
+    }
+
+    @include until-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  & .checkbox_list__label {
+    @extend .text-24;
+    margin-bottom: 24px;
+    display: flex;
+
+    @include until-desktop-wide {
+      font-size: $font-size-16;
+      margin-bottom: 16px;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-14;
+      margin-bottom: 12px;
+    }
+  }
+
+  & .checkbox_list__error {
+    @extend .text-16;
+    width: 100%;
+    color: $colour-primary-scarlet;
+    word-wrap: break-word;
+    line-height: 16px;
+    height: 24px;
+  }
+}

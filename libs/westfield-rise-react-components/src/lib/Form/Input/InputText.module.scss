@@ -1,0 +1,114 @@
+@import '../../styles/text-styles.module';
+@import '../../styles/colours';
+
+.field_input__wrapper {
+  width: 50%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  display: flex;
+  box-sizing: border-box;
+
+  @include until-desktop-wide {
+    gap: 16px;
+  }
+
+  @include until-desktop-small {
+    gap: 12px;
+  }
+
+  @include until-tablet {
+    width: 100%;
+  }
+
+  .is_required {
+    line-height: 1;
+    display: inline-flex;
+  }
+
+  .field_input__label {
+    @extend .text-24;
+    width: 100%;
+    line-height: 1;
+    word-wrap: break-word;
+
+    @include until-desktop-wide {
+      font-size: $font-size-16;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-14;
+    }
+  }
+
+  .field_input__input_wrapper {
+    width: 100%;
+    padding: 24px;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px rgba($colour-primary-charcoal, 0.2) solid;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+    box-sizing: border-box;
+
+    &__has_error {
+      border-color: $colour-primary-scarlet;
+    }
+
+    @include until-desktop-wide {
+      border-radius: 4px;
+      border-width: 1px;
+      padding: 16px;
+    }
+
+    @include until-desktop-small {
+      padding: 13px 16px;
+    }
+
+    .field_input__input {
+      @extend .text-24;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      border: 0 none;
+      width: 100%;
+
+      @include until-desktop-wide {
+        font-size: $font-size-16;
+      }
+
+      @include until-desktop-small {
+        font-size: $font-size-14;
+      }
+
+      &::placeholder {
+        @extend .text-24;
+        opacity: 0.6;
+
+        @include until-desktop-wide {
+          font-size: $font-size-16;
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.field_input__error {
+  @extend .text-16;
+  width: 100%;
+  color: $colour-primary-scarlet;
+  word-wrap: break-word;
+  line-height: 1;
+
+  @include until-desktop-small {
+    font-size: $font-size-14;
+  }
+}

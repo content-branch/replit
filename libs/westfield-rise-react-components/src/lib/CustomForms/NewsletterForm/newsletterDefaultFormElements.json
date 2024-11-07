@@ -1,0 +1,7 @@
+{
+  "newsletter": {
+    "label": "Get the latest insight and case studies",
+    "placeholder": "Enter your email",
+    "errorMessages": ["Please enter a valid email address", "Email is required"]
+  }
+}

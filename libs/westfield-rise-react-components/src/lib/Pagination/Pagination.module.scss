@@ -1,0 +1,13 @@
+@import '../styles/typography.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.page-count {
+  margin: 0px 18px;
+  @include dm-sans-medium();
+}

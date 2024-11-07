@@ -1,0 +1,188 @@
+@import '../styles/text-styles.module.scss';
+
+.container {
+  background-color: $colour-primary-charcoal;
+  color: $colour-primary-white;
+  padding: 104px 120px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  @include until-desktop-wide {
+    gap: 68px;
+    padding: 69px 80px 40px;
+  }
+
+  @include until-desktop-small {
+    padding: 69px 40px 40px;
+  }
+
+  @include until-tablet {
+    padding: 48px 16px;
+  }
+
+  & .info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @include until-tablet {
+      flex-direction: column;
+      gap: 70px;
+    }
+
+    &--left,
+    &--right {
+      display: flex;
+      flex-direction: column;
+
+      @include until-tablet {
+        align-items: center;
+      }
+    }
+
+    &--left {
+      gap: 60px;
+
+      @include until-desktop-wide {
+        gap: 40px;
+      }
+
+      .logo {
+        @include until-desktop-wide {
+          width: 275px;
+          height: 118.683px;
+        }
+
+        @include until-tablet {
+          width: 201px;
+          height: 86.746px;
+        }
+      }
+
+      .logo-text {
+        @extend .heading-4;
+        font-size: $font-size-36;
+        color: inherit;
+
+        @include until-desktop-wide {
+          font-size: $font-size-24;
+        }
+
+        @include until-tablet {
+          font-size: $font-size-16;
+        }
+      }
+    }
+
+    &--right {
+      justify-content: space-between;
+      text-align: center;
+      max-width: 400px;
+
+      @include until-desktop-wide {
+        max-width: 260px;
+      }
+
+      @include until-tablet {
+        gap: 70px;
+        max-width: unset;
+      }
+
+      .motto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        @include until-desktop-wide {
+          gap: 20px;
+
+          &__logo {
+            width: 180px;
+            height: 45.6px;
+          }
+        }
+      }
+
+      .motto-text {
+        @extend .heading-7;
+        color: inherit;
+        opacity: 0.8;
+      }
+
+      .follow-us {
+        @extend .subheading-2;
+        color: inherit;
+        height: 31px;
+
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        gap: 20px;
+
+        svg {
+          @include desktop-wide {
+            width: 32px;
+            height: 31px;
+          }
+        }
+      }
+    }
+  }
+
+  .legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 48px;
+    border-top: 1px solid rgba($colour-primary-white, 0.2);
+
+    @extend .text-24;
+    color: inherit;
+    opacity: 0.5;
+
+    @include until-desktop-wide {
+      padding-top: 40px;
+      font-size: $font-size-16;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-14;
+    }
+
+    @include until-tablet {
+      flex-direction: column-reverse;
+      gap: 40px;
+      padding-top: 48px;
+    }
+
+    .links {
+      display: flex;
+      gap: 60px;
+
+      @include desktop-wide {
+        font-size: $font-size-24;
+      }
+
+      @include until-desktop-wide {
+        gap: 40px;
+      }
+
+      @include until-tablet {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

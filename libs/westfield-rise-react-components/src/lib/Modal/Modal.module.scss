@@ -1,0 +1,91 @@
+@import '../styles/effects.scss';
+@import '../styles/colours.scss';
+@import '../styles/breakpoints.scss';
+
+.modal_overlay {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($colour-primary-white, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @include until-tablet {
+    padding: 40px 16px;
+  }
+}
+
+.modal_box {
+  position: relative;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  max-width: 100%;
+  max-height: 100%;
+
+  @include until-tablet {
+    height: 100%;
+    width: 100%;
+  }
+
+  > div {
+    width: 1395px;
+
+    @include until-desktop-wide {
+      width: 930px;
+    }
+
+    @include until-desktop-small {
+      width: 688px;
+    }
+
+    @include until-tablet {
+      width: 100%;
+    }
+  }
+
+  .modal_overlay.video & > div {
+    height: 784.5px;
+
+    @include until-desktop-wide {
+      height: 523px;
+    }
+
+    @include until-desktop-small {
+      height: 387px;
+    }
+
+    @include until-tablet {
+      height: 240px;
+    }
+  }
+
+  > button {
+    width: 84px;
+    height: 84px;
+
+    > svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include until-desktop-wide {
+      width: 56px;
+      height: 56px;
+    }
+
+    @include until-desktop-small {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}

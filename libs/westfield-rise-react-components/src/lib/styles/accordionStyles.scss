@@ -1,0 +1,400 @@
+@import 'text-styles.module';
+@import 'themes.module';
+
+.chevron-down {
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+  transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
+
+  div[class^='Filters_filters__'] & {
+    width: 60px;
+    height: 72px;
+
+    @include until-desktop-wide {
+      width: 42px;
+      height: 48px;
+    }
+  }
+
+  @include until-desktop-wide {
+    width: 56px;
+    height: 56px;
+  }
+
+  @include until-desktop-small {
+    width: 52px;
+    height: 52px;
+  }
+
+  @include until-tablet {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.szh-accordion {
+  flex-grow: 1;
+
+  &__item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &-btn {
+      cursor: pointer;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      gap: 60px;
+      background-color: transparent;
+      border: none;
+      padding: 48px 24px 48px 0;
+
+      @include until-desktop-wide {
+        padding: 32px 20px 32px 0;
+      }
+
+      @include until-desktop-small {
+        padding: 28px 10px 28px 0;
+      }
+
+      @include until-tablet {
+        padding: 23px 0;
+      }
+
+      div[class^='Filters_filters__'] & {
+        padding-bottom: 15px;
+        padding-top: 15px;
+
+        @include until-desktop-wide {
+          padding-bottom: 10px;
+          padding-top: 10px;
+        }
+      }
+    }
+
+    @include desktop-small {
+      &:first-of-type:not(:last-of-type) &-btn {
+        padding-top: 0;
+      }
+    }
+
+    &-content {
+      position: relative;
+      transition: height 0.25s cubic-bezier(0, 0, 0, 1);
+      @extend .text-22;
+
+      .wrapper--grey & {
+        background: #f5f5f5;
+      }
+
+      @each $name, $themeColors in $themes {
+        .wrapper--#{$name} & {
+          background: rgba((nth($themeColors, 1)), 0.10000000149011612);
+        }
+      }
+
+      @include until-desktop-small {
+        font-size: $font-size-20;
+      }
+
+      @include until-tablet {
+        font-size: $font-size-14;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        height: 40px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        @include until-tablet {
+          height: 30px;
+        }
+      }
+    }
+
+    &-panel {
+      padding: 48px 64px 88px;
+
+      @include until-desktop-wide {
+        padding: 40px 32px 80px;
+      }
+
+      @include until-desktop-small {
+        padding: 30px 28px 60px;
+      }
+
+      div[class^='Filters_filters__'] & {
+        padding: 0px 32px 48px;
+
+        @include until-desktop-wide {
+          padding: 0px 20px 40px;
+        }
+
+        @include until-desktop-small {
+          padding: 0px 16px 32px;
+        }
+      }
+    }
+
+    &--expanded {
+      .chevron-down {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+.text_container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 30px;
+  text-align: left;
+
+  .number {
+    display: flex;
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: $colour-primary-charcoal;
+    @include gt-flexa-light();
+    font-size: 32px;
+    line-height: 1;
+    color: white;
+
+    @include until-desktop-small {
+      width: 34px;
+      height: 34px;
+      font-size: 20px;
+    }
+
+    @include until-desktop-small {
+      width: 28px;
+      height: 28px;
+      font-size: 16.471px;
+    }
+
+    @include until-tablet {
+      width: 28px;
+      height: 28px;
+      font-size: 11.765px;
+    }
+  }
+
+  .text {
+    @include gt-flexa-light();
+    color: $colour-primary-charcoal;
+    font-size: 42px;
+
+    @include until-desktop-wide {
+      font-size: 28px;
+    }
+
+    @include until-desktop-small {
+      font-size: 24px;
+    }
+
+    @include until-tablet {
+      font-size: 16px;
+    }
+  }
+}
+
+.map_accordion_wrapper {
+  .szh-accordion__item-content::after {
+    height: 10px;
+  }
+
+  .szh-accordion__item-panel {
+    padding: 0;
+  }
+}
+
+.modal_accordion_wrapper {
+  .accordion_container {
+    padding: 120px 0 0;
+    flex-direction: column;
+
+    @include until-desktop-wide {
+      padding: 80px 0 0;
+    }
+
+    @include until-desktop-small {
+      padding: 40px 0 0;
+    }
+
+    @include until-tablet {
+      padding: 43px 0 0;
+    }
+
+    h3[class^='Accordion_title'] {
+      width: 100%;
+    }
+
+    .szh-accordion__item {
+      &--expanded {
+        border-bottom: 0;
+      }
+
+      &-panel {
+        padding: 72px 96px;
+
+        @include until-desktop-wide {
+          padding: 48px 64px;
+        }
+
+        @include until-desktop-small {
+          padding: 40px;
+        }
+
+        @include until-tablet {
+          padding: 28px 20px;
+        }
+
+        div[class^='RichTextRenderer_container'] {
+          gap: 18px;
+
+          @include until-desktop-wide {
+            gap: 12px;
+          }
+
+          @include until-desktop-small {
+            gap: 10px;
+          }
+
+          @include until-tablet {
+            gap: 4px;
+          }
+        }
+
+        p[class^='RichTextRenderer_text'] {
+          @include until-desktop-small {
+            font-size: 18px;
+          }
+
+          @include until-tablet {
+            font-size: 16px;
+          }
+
+          br {
+            display: none;
+          }
+        }
+
+        p[class^='RichTextRenderer_text']:not(:first-child) {
+          span[class^='RichTextRenderer_bold'] {
+            padding-top: 60px;
+            margin-top: 46px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+
+            @include until-desktop-wide {
+              padding-top: 40px;
+              margin-top: 32px;
+            }
+
+            @include until-desktop-small {
+              padding-top: 32px;
+              margin-top: 28px;
+            }
+
+            @include until-tablet {
+              padding-top: 30px;
+              margin-top: 26px;
+            }
+          }
+        }
+
+        span[class^='RichTextRenderer_bold'] {
+          font-weight: 700;
+          font-size: 36px;
+
+          @include until-desktop-wide {
+            font-size: 24px;
+          }
+
+          @include until-desktop-small {
+            font-size: 20px;
+          }
+
+          @include until-tablet {
+            font-size: 16px;
+          }
+        }
+
+        p[class^='RichTextRenderer_text'] > a {
+          @extend .read-more;
+          margin-top: 16px;
+
+          @include until-desktop-wide {
+            margin-top: 12px;
+          }
+
+          @include until-desktop-small {
+            font-size: 16px;
+            margin-top: 8px;
+          }
+
+          @include until-tablet {
+            margin-top: 16px;
+          }
+
+          &::after {
+            background: url('../assets/img/icon-arrow-right.png') center center
+              no-repeat;
+            height: 28px;
+            width: 28px;
+            content: '';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include until-desktop-wide {
+              background-size: 18px;
+              height: 18px;
+              width: 18px;
+            }
+
+            @include until-desktop-small {
+              background-size: 16px;
+              height: 16px;
+              width: 16px;
+            }
+          }
+
+          &:hover {
+            &::after {
+              @extend .move-right;
+            }
+          }
+        }
+      }
+    }
+
+    .szh-accordion__item-content::after {
+      height: 0;
+    }
+
+    .text_container .text {
+      @include tablet-only {
+        font-size: 20px;
+      }
+    }
+  }
+}

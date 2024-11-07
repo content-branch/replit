@@ -1,0 +1,89 @@
+@import '../styles/text-styles.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 46px 0;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  @include until-desktop-wide {
+    padding: 32px 0;
+  }
+
+  @include until-desktop-small {
+    padding: 26px 0;
+    gap: 50px;
+  }
+
+  @include until-tablet {
+    padding: 26px 0;
+    gap: 40px;
+  }
+
+  .text {
+    @extend .text-18;
+    font-size: 27px;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include until-desktop-wide {
+      font-size: $font-size-18;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-16;
+    }
+
+    @include until-tablet {
+      font-size: $font-size-14;
+    }
+
+    @media screen and (max-width: 380px) {
+      max-width: 200px;
+    }
+
+    sup {
+      padding-left: 5px;
+
+      @include until-tablet {
+        padding-left: 1px;
+      }
+    }
+  }
+
+  .value-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    @extend .heading-1;
+    font-size: $font-size-72;
+    line-height: 60px;
+    letter-spacing: 1.2px;
+
+    @include until-desktop-wide {
+      font-size: $font-size-48;
+      line-height: 40px;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-28;
+      line-height: 24px;
+      letter-spacing: 2px;
+    }
+
+    &.long-suffix {
+      @include until-tablet {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

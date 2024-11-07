@@ -1,0 +1,53 @@
+@import '../styles/spacing.scss';
+@import '../styles/text-styles.module.scss';
+@import '../styles/themes.module.scss';
+
+.container {
+  @extend .centered-container;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 16px;
+  margin-bottom: 60px;
+
+  @include tablet-wide {
+    padding: 40px;
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 80px;
+  }
+
+  @include desktop-small {
+    margin-bottom: 120px;
+  }
+
+  @include desktop-wide {
+    padding: 60px;
+    margin-bottom: 180px;
+  }
+
+  @each $theme,
+  $color in $themes {
+    &--#{$theme} {
+      background: rgba((nth($color, 1)), 0.10);
+    }
+  }
+}
+
+.text {
+  @include gt-flexa-light();
+  font-size: $font-size-32;
+  color: inherit;
+
+  @include until-desktop-wide {
+    font-size: $font-size-20;
+  }
+}
+
+.link {
+  display: flex;
+}

@@ -1,0 +1,270 @@
+@import '../styles/text-styles.module.scss';
+
+.container {
+  width: 100%;
+  padding: 65px 0 45px;
+
+  @include until-desktop-small {
+    padding: 60px 0;
+  }
+
+  @include until-tablet {
+    padding: 48px 0;
+  }
+
+  &--people {
+    .image {
+      filter: grayscale(1);
+    }
+
+    .text-left {
+      display: flex;
+      flex-direction: column;
+      font-size: $font-size-20;
+
+      &__substring:not(:last-child)::after {
+        content: ',';
+      }
+    }
+  }
+
+  &--news-insights {
+    .image-container {
+      position: relative;
+      clip-path: polygon(6% 0, 100% 0%, 94% 100%, 0% 100%);
+      height: 643.5px;
+      width: 1128.5px;
+
+      @include until-desktop-wide {
+        width: 100%;
+        height: 100%;
+      }
+
+      .image {
+        clip-path: none;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: unset;
+        max-height: unset;
+
+        @include until-desktop-wide {
+          aspect-ratio: 3/2;
+        }
+
+        @include until-tablet {
+          aspect-ratio: 330/271;
+        }
+      }
+    }
+
+    .text-container {
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+      left: 40px;
+      right: 25px;
+      margin: 0;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      padding: 42px 72px;
+
+      @include until-desktop-wide {
+        padding: 28px 40px;
+        gap: 11px;
+        left: 42px;
+      }
+
+      @include until-desktop-small {
+        right: 14px;
+        gap: 8px;
+        padding: 20px 40px;
+      }
+
+      @include until-tablet {
+        right: 10px;
+        gap: 4px;
+        padding: 16px 28px;
+      }
+
+      @include until-mobile {
+        right: 0;
+      }
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        z-index: -1;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        transform: skew(-6deg);
+        bottom: 0;
+        right: 0;
+
+        @include desktop-wide {
+          left: 20px;
+        }
+      }
+
+      .text-left,
+      .text-right {
+        width: 100%;
+        z-index: 1;
+      }
+
+      .text-left {
+        @include until-tablet {
+          font-size: $font-size-16;
+        }
+      }
+
+      .text-right {
+        @extend .text-24;
+        line-height: $line-height-heading;
+        opacity: 0.8;
+
+        @include until-desktop-wide {
+          font-size: $font-size-18;
+        }
+
+        @include until-desktop-small {
+          font-size: $font-size-16;
+        }
+
+        @include until-tablet {
+          font-size: $font-size-14;
+        }
+      }
+    }
+  }
+}
+
+.image-container {
+  width: 100%;
+  line-height: 1;
+
+  .image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    max-height: 800px;
+    object-fit: cover;
+    clip-path: polygon(6% 0, 100% 0%, 94% 100%, 0% 100%);
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom: 1px solid $colour-primary-white;
+
+    @include until-desktop-wide {
+      max-height: 535px;
+    }
+
+    @include until-desktop-small {
+      max-height: 320px;
+    }
+
+    @include until-tablet {
+      max-height: 245px;
+    }
+  }
+}
+
+.title {
+  @extend .heading-1;
+  margin-bottom: 120px;
+  text-align: center;
+
+  @include until-desktop-wide {
+    margin-bottom: 80px;
+  }
+
+  @include until-desktop-small {
+    margin-bottom: 48px;
+  }
+
+  @include until-tablet {
+    margin-bottom: 40px;
+  }
+}
+
+.text-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 48px;
+  margin-right: 80px;
+
+  @include until-desktop-wide {
+    margin-right: 70px;
+    margin-top: 32px;
+    gap: 20px;
+  }
+
+  @include until-desktop-small {
+    gap: 32px;
+    margin-top: 20px;
+    margin-right: 50px;
+  }
+
+  @include until-tablet {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    margin-right: 40px;
+  }
+
+  .text-left {
+    width: 45%;
+    @extend .heading-4;
+    font-size: 34px;
+
+    @include until-desktop-wide {
+      font-size: $font-size-24;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-18;
+    }
+
+    @include until-tablet {
+      width: 100%;
+      font-size: $font-size-20;
+    }
+  }
+
+  .text-right {
+    width: 55%;
+    @extend .text-28;
+    font-size: $font-size-28;
+
+    @include until-desktop-wide {
+      font-size: $font-size-20;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-16;
+    }
+
+    @include until-tablet {
+      width: 100%;
+    }
+  }
+}
+
+.link {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+
+  @include until-desktop-small {
+    margin-top: 48px;
+  }
+
+  @include until-tablet {
+    margin-top: 40px;
+  }
+}

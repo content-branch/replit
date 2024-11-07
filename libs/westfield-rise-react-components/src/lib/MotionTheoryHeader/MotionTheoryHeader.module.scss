@@ -1,0 +1,307 @@
+@import '../styles/spacing.scss';
+
+$bg_themes: (
+    'peacock': peacock canary ultraviolet,
+    'ultraviolet': ultraviolet peacock canary,
+    'candy': candy ultraviolet scarlet,
+    'scarlet': scarlet candy ultraviolet,
+    'canary': canary ultraviolet tangerine,
+    'tangerine': tangerine canary ultraviolet,
+);
+
+.bg-animation {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    z-index: -1;
+    max-width: 1920px;
+    top: -2%;
+
+    @include desktop-wide {
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+
+    @include until-tablet {
+        transform: translate(-22%, 0%);
+        top: -1%;
+    }
+
+    div[class^='Hero_container'] & {
+        height: calc(100% - 100px);
+        top: unset;
+        left: unset;
+
+        @include until-tablet {
+            height: calc(100% - 250px);
+            margin-top: 250px;
+            margin-left: 30%;
+        }
+
+        @include until-mobile {
+            margin-left: 30%;
+        }
+    }
+
+    div[class^='Page404_container'] & {
+        margin-top: 200px;
+        transform: scale(2) translate(-22%, 0);
+
+        @include until-desktop-wide {
+            transform: scale(2) translate(0, -15%);
+        }
+
+        @include until-desktop-small {
+            margin-top: 160px;
+            transform: scale(2) translate(-5%, 0);
+        }
+
+        @include until-tablet {
+            margin-top: 0;
+            transform: scale(2) translate(-25%, 15%);
+        }
+    }
+}
+
+.color {
+    width: 75%;
+    height: 450px;
+    position: absolute;
+
+    div[class^='Hero_container'] & {
+        width: 600px;
+        height: 600px;
+    }
+
+    @include tablet-wide {
+        width: 60%;
+        height: 700px;
+    }
+
+    @include desktop-small {
+        height: 900px;
+
+        div[class^='Hero_container'] & {
+            width: 800px;
+            height: 800px;
+        }
+    }
+
+    @include desktop-wide {
+        width: 1000px;
+        height: 1000px;
+
+        div[class^='Hero_container'] & {
+            width: 1200px;
+            height: 1200px;
+        }
+    }
+
+
+}
+
+@each $theme,
+$color in $bg_themes {
+    .color_1--#{$theme} {
+        background: url('/img/#{nth($color, 1)}.webp') center center no-repeat;
+        background-size: contain;
+        animation: animate-1 60s alternate infinite;
+
+        div[class^='Hero_container'] & {
+            animation: animate-1-home 7s alternate infinite;
+        }
+    }
+
+    .color_2--#{$theme} {
+        background: url('/img/#{nth($color, 2)}.webp') center center no-repeat;
+        background-size: contain;
+        animation: animate-2 60s alternate infinite;
+
+        div[class^='Hero_container'] & {
+            animation: animate-2-home 7s alternate infinite;
+        }
+    }
+
+    .color_3--#{$theme} {
+        background: url('/img/#{nth($color, 3)}.webp') center center no-repeat;
+        background-size: contain;
+        animation: animate-3 60s alternate infinite;
+
+        div[class^='Hero_container'] & {
+            animation: animate-3-home 7s alternate infinite;
+        }
+    }
+}
+
+@keyframes animate-1 {
+
+    0%,
+    100% {
+        transform: translate(10%, 0) scale(0.9);
+    }
+
+    33% {
+        transform: translate(65%, 0);
+    }
+
+    66% {
+        transform: translate(50%, 20%);
+    }
+}
+
+@-moz-keyframes animate-1 {
+
+    0%,
+    100% {
+        transform: translate(10%, 0) scale(0.9);
+    }
+
+    33% {
+        transform: translate(65%, 0);
+    }
+
+    66% {
+        transform: translate(50%, 20%);
+    }
+}
+
+
+@keyframes animate-2 {
+
+    0%,
+    100% {
+        transform: translate(65%, 0);
+    }
+
+    33% {
+        transform: translate(50%, 20%);
+    }
+
+    66% {
+        transform: translate(10%, 0);
+    }
+}
+
+@-moz-keyframes animate-2 {
+
+    0%,
+    100% {
+        transform: translate(65%, 0);
+    }
+
+    33% {
+        transform: translate(50%, 20%);
+    }
+
+    66% {
+        transform: translate(10%, 0);
+    }
+}
+
+@keyframes animate-3 {
+
+    0%,
+    100% {
+        transform: translate(50%, 20%);
+    }
+
+    33% {
+        transform: translate(10%, 0) scale(0.8);
+    }
+
+    66% {
+        transform: translate(65%, 0);
+    }
+}
+
+@-moz-keyframes animate-3 {
+
+    0%,
+    100% {
+        transform: translate(50%, 20%);
+    }
+
+    33% {
+        transform: translate(10%, 0) scale(0.8);
+    }
+
+    66% {
+        transform: translate(65%, 0);
+    }
+}
+
+
+@keyframes animate-1-home {
+
+    0%,
+    100% {
+        transform: translate(0, -20%);
+    }
+
+    50% {
+        transform: translate(20%, 20%);
+    }
+}
+
+@-moz-keyframes animate-1-home {
+
+    0%,
+    100% {
+        transform: translate(0, -20%);
+    }
+
+    50% {
+        transform: translate(20%, 20%);
+    }
+}
+
+@keyframes animate-2-home {
+
+    0%,
+    100% {
+        transform: translate(20%, 20%);
+
+    }
+
+    50% {
+        transform: translate(-30%, 0) scale(0.8);
+    }
+}
+
+@-moz-keyframes animate-2-home {
+
+    0%,
+    100% {
+        transform: translate(20%, 20%);
+
+    }
+
+    50% {
+        transform: translate(-30%, 0) scale(0.8);
+    }
+}
+
+@keyframes animate-3-home {
+
+    0%,
+    100% {
+        transform: translate(-20%, 0) scale(0.8);
+    }
+
+    50% {
+        transform: translate(20%, -30%);
+    }
+}
+
+@-moz-keyframes animate-3-home {
+
+    0%,
+    100% {
+        transform: translate(-20%, 0) scale(0.8);
+    }
+
+    50% {
+        transform: translate(20%, -30%);
+    }
+}

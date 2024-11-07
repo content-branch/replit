@@ -1,0 +1,48 @@
+@import '../styles/effects.scss';
+@import '../styles/themes.module.scss';
+@import '../styles/text-styles.module.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 100px 0;
+
+  @include until-desktop-small {
+    padding: 60px 0;
+  }
+
+  @include until-tablet {
+    padding: 48px 0;
+  }
+
+  @each $theme, $color in $themes {
+    &--#{$theme} {
+      background: url('../assets/img/bg-#{$theme}.png')
+        no-repeat
+        center /
+        cover;
+    }
+  }
+}
+
+.title {
+  @extend .display-m;
+  margin: 0;
+  text-align: center;
+  z-index: 1;
+
+  @include until-desktop-small {
+    font-size: $font-size-60;
+  }
+
+  @include until-tablet {
+    font-size: $font-size-48;
+  }
+}
+
+.background {
+  z-index: 0;
+  object-fit: cover;
+}

@@ -1,0 +1,39 @@
+@import '../styles/text-styles.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 120px;
+  padding: 75px 120px 90px;
+
+  @include until-desktop-wide {
+    padding: 100px 80px 120px;
+    gap: 80px;
+  }
+
+  @include until-desktop-small {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 40px 80px;
+  }
+
+  @include until-tablet {
+    gap: 28px;
+    padding: 48px 16px 60px;
+  }
+}
+
+.title {
+  @extend .heading-1;
+  margin: 0;
+
+  @include desktop-small {
+    width: 33.3333%;
+    flex-shrink: 0;
+  }
+
+  @include until-desktop-small {
+    text-align: center;
+  }
+}

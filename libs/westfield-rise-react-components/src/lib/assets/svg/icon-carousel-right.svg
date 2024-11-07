@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="24" transform="matrix(-1 0 0 1 48 0)" fill="var(--fill-color, transparent)" />
+  <path d="M25.0286 17.1428L32.2286 24.3428M32.2286 24.3428L25.0286 31.5428M32.2286 24.3428H15.7715" stroke="var(--stroke-color, #3D3836)" stroke-width="1.09091"/>
+</svg>

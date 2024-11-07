@@ -1,0 +1,166 @@
+@import '../../../libs/westfield-rise-react-components/src/lib/styles/text-styles.module.scss';
+@import '../../../libs/westfield-rise-react-components/src/lib/styles/typography.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 75px 120px 90px;
+
+  @include until-desktop-wide {
+    padding: 100px 80px 90px;
+  }
+
+  @include until-desktop-small {
+    padding: 60px 40px 80px 40px;
+  }
+
+  @include until-tablet {
+    padding: 48px 16px 60px 16px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    .card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @include desktop-small-only-rem {
+      .card:nth-child(3n + 2) {
+        margin-top: 90px;
+      }
+    }
+
+    @include until-desktop-wide {
+      gap: 20px;
+    }
+
+    @include until-desktop-small {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+
+      .card:nth-child(2n) {
+        margin-top: 40px;
+      }
+    }
+
+    @include until-tablet {
+      grid-template-columns: repeat(2, 1fr);
+
+      .card:nth-child(2n) {
+        margin-top: 40px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+
+    @include until-desktop-wide {
+      gap: 30px;
+    }
+
+    @include until-desktop-small {
+      gap: 20px;
+    }
+
+    &__total_number {
+      @extend .heading-3;
+      font-size: $font-size-36;
+
+      @include until-desktop-wide {
+        font-size: $font-size-24;
+      }
+
+      @include until-desktop-small {
+        font-size: $font-size-20;
+      }
+    }
+  }
+}
+
+@mixin before__after($type, $zIndex, $opacity) {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: inherit;
+  z-index: $zIndex;
+  opacity: $opacity;
+
+  @if ($type == 'cookie') {
+    background: $gradient-h-ultraviolet-candy border-box;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+.matomo_container {
+  padding: 30px 80px;
+  background: #fbfbfb;
+  @include dm-sans-regular();
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+
+  @include until-desktop-small {
+    padding: 30px 40px;
+  }
+
+  @include until-tablet {
+    padding: 30px 16px;
+  }
+}
+
+.button_container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.button {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  position: relative;
+  border-radius: 100px;
+  padding: 16px 34px;
+  background: #3d3836;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+
+  &::after {
+    @include before__after('cookie', -1, 0);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}

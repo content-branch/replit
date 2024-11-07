@@ -1,0 +1,162 @@
+@import '../styles/text-styles.module.scss';
+@import '../styles/spacing.scss';
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 30px;
+
+  @include until-desktop-wide {
+    gap: 20px;
+  }
+
+  @include until-desktop-small {
+    gap: 12px;
+  }
+
+  @include until-tablet {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &:nth-child(odd) {
+    @include desktop-small {
+      padding-right: 40px;
+    }
+
+    @include desktop-wide {
+      padding-right: 60px;
+    }
+  }
+
+  &:nth-child(even) {
+    @include desktop-small {
+      padding-left: 40px;
+    }
+
+    @include desktop-wide {
+      padding-left: 60px;
+    }
+  }
+
+  .image {
+    width: calc(50% + 15px);
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+
+    @include until-desktop-small {
+      min-height: 330px;
+      width: calc(50% - 10px);
+    }
+
+    @include until-tablet {
+      min-height: unset;
+      height: 246px;
+      width: 100%;
+    }
+  }
+
+  &--people {
+    .image {
+      filter: grayscale(1);
+    }
+  }
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+  gap: 60px;
+  width: 50%;
+  padding: 0 120px;
+
+  @include until-desktop-wide {
+    gap: 40px;
+    padding: 0 60px;
+  }
+
+  @include until-desktop-small {
+    gap: 28px;
+    padding: 0 40px 0 30px;
+  }
+
+  @include until-tablet {
+    gap: 32px;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .link {
+    @include until-tablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &--inner {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @include until-desktop-wide {
+      gap: 24px;
+    }
+
+    @include until-desktop-small {
+      gap: 16px;
+    }
+
+    & .title,
+    & .info {
+      @extend .heading-2;
+
+      @include until-desktop-small {
+        font-size: $font-size-24;
+      }
+    }
+
+    & .info {
+      > span {
+        display: block;
+
+        &:nth-child(2) {
+          font-size: 33px;
+          line-height: $line-height-heading;
+          margin-top: 22.5px;
+
+          @include until-desktop-wide {
+            font-size: $font-size-20;
+            margin-top: 15px;
+          }
+
+          @include until-desktop-small {
+            font-size: $font-size-16;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    & .subtitle,
+    & .text {
+      @extend .text-28;
+      font-size: 30px;
+      margin: 0;
+
+      @include until-desktop-wide {
+        font-size: $font-size-20;
+      }
+
+      @include until-desktop-small {
+        font-size: $font-size-16;
+      }
+    }
+
+    & .subtitle {
+      line-height: $line-height-heading;
+    }
+  }
+}

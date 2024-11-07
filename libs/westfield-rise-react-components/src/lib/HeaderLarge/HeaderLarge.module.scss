@@ -1,0 +1,88 @@
+@import '../styles/effects.scss';
+@import '../styles/spacing.scss';
+@import '../styles/text-styles.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: $padding-xlarge;
+  @extend .centered-container;
+
+  @include until-desktop-wide {
+    gap: 40px;
+    padding-top: $padding-large;
+  }
+
+  @include until-desktop-small {
+    gap: 36px;
+    padding: 30px;
+  }
+
+  @include until-tablet {
+    gap: 32px;
+    padding: $padding-mobile;
+  }
+}
+
+.title,
+.text {
+  margin: 0;
+  text-align: center;
+}
+
+.title {
+  @extend .display-m;
+
+  @include until-desktop-small {
+    font-size: $font-size-60;
+  }
+
+  @include until-tablet {
+    font-size: 40px;
+  }
+}
+
+.text {
+  @extend .heading-2;
+
+  @include until-desktop-small {
+    font-size: $font-size-28;
+  }
+
+  @include until-tablet {
+    font-size: $font-size-20;
+  }
+}
+
+.link {
+  line-height: $line-height-text;
+
+  @include desktop-wide {
+    margin-bottom: 60px;
+  }
+
+  @include desktop-small {
+    margin-bottom: 40px;
+  }
+}
+
+.background_image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 128/63;
+  object-fit: cover;
+  display: flex;
+
+  @include until-desktop-small {
+    aspect-ratio: 61/30;
+  }
+
+  @include until-tablet {
+    aspect-ratio: 1;
+  }
+}

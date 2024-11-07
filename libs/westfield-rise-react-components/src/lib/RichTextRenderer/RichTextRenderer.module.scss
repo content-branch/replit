@@ -1,0 +1,134 @@
+@import '../styles/spacing.scss';
+@import '../styles/text-styles.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @include until-desktop-wide {
+    gap: 40px;
+  }
+}
+
+.text {
+  @extend .text-28;
+  margin: 0;
+
+  @include until-desktop-wide {
+    font-size: $font-size-22;
+  }
+
+  @include until-desktop-small {
+    font-size: $font-size-20;
+  }
+
+  div[class^='Accordion_container__'] & {
+    @include until-tablet {
+      font-size: $font-size-16;
+    }
+  }
+
+  a,
+  .link {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.link {
+  color: inherit;
+}
+
+.list {
+  li {
+    @extend .text-24;
+    line-height: $line-height-heading;
+
+    @include until-desktop-wide {
+      font-size: $font-size-18;
+    }
+
+    @include until-desktop-small {
+      font-size: $font-size-16;
+    }
+
+    & > p {
+      margin: 0;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 30px;
+
+      @include until-desktop-wide {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &--tick {
+    padding: 0;
+
+    li {
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
+      gap: 30px;
+      list-style-type: none;
+
+      @include until-desktop-wide {
+        gap: 20px;
+      }
+
+      @include until-desktop-small {
+        gap: 16px;
+      }
+
+      .tick--icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        background-color: $colour-primary-charcoal;
+        border-radius: 100%;
+
+        @include until-desktop-wide {
+          width: 26px;
+          height: 26px;
+        }
+
+        @include until-desktop-small {
+          width: 20px;
+          height: 20px;
+        }
+
+        svg {
+          width: 22.5px;
+          height: 19.5px;
+
+          @include until-desktop-wide {
+            width: 15px;
+            height: 13px;
+          }
+
+          @include until-desktop-small {
+            width: 11.5px;
+            height: 10px;
+          }
+
+          path {
+            stroke: white;
+          }
+        }
+      }
+    }
+  }
+}

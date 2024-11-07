@@ -1,0 +1,41 @@
+{
+  "name": "westfield-rise-backend-utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/westfield-rise-backend-utils/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/westfield-rise-backend-utils",
+        "tsConfig": "libs/westfield-rise-backend-utils/tsconfig.lib.json",
+        "packageJson": "libs/westfield-rise-backend-utils/package.json",
+        "main": "libs/westfield-rise-backend-utils/src/index.ts",
+        "assets": ["libs/westfield-rise-backend-utils/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/westfield-rise-backend-utils/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/westfield-rise-backend-utils/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

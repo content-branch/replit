@@ -1,0 +1,113 @@
+@import '../styles/text-styles.module.scss';
+
+.progress_bar__wrapper {
+  width: 100%;
+  height: 53px;
+  position: relative;
+  margin-bottom: 80px;
+
+  @include until-desktop-small {
+    margin-bottom: 60px;
+  }
+
+  @include until-tablet {
+    margin-bottom: 40px;
+  }
+
+  &>.progress_bar__bar {
+    width: 100%;
+    height: 30px;
+    left: 0px;
+    top: 33px;
+    position: relative;
+    background: #d9d9d9;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    @include until-desktop-wide {
+      height: 20px;
+      border-radius: 10px;
+    }
+
+    @include until-tablet {
+      height: 16px;
+      border-radius: 8px;
+    }
+
+    .progress_bar__bar__step_bullet {
+      &.progress_bar__bar__step_bullet__active {
+        opacity: 1;
+      }
+
+      width: 15px;
+      height: 15px;
+      background: white;
+      border-radius: 100%;
+
+      @include until-desktop-wide {
+        width: 10px;
+        height: 10px;
+      }
+
+      @include until-tablet {
+        width: 8px;
+        height: 8px;
+      }
+
+      &>.progress_bar__bar__step_bullet__text {
+        opacity: 0.6;
+        @extend .text-24;
+        text-align: center;
+        position: absolute;
+        top: -18px;
+        transform: translate(-50%, -100%);
+        width: fit-content;
+        height: fit-content;
+        border-radius: inherit;
+        font-weight: $font-weight-light;
+        margin-left: 7.5px;
+
+        @include until-desktop-wide {
+          margin-left: 5px;
+          font-size: $font-size-16;
+          top: -12px;
+        }
+
+        @include until-tablet {
+          font-size: 12px;
+        }
+
+        &.progress_bar__bar__step_bullet__text__active {
+          font-weight: $font-weight-medium;
+          opacity: 1;
+        }
+      }
+    }
+
+    &>.progress_bar__bar__progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 1%;
+      background: $gradient-candy-ultraviolet;
+      border-radius: inherit;
+    }
+  }
+
+  &>.progress_bar__step_text_wrapper {
+    top: 0;
+    position: absolute;
+    opacity: 0.6;
+    text-align: center;
+    color: #3d3836;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    letter-spacing: 0.5px;
+    word-wrap: break-word;
+  }
+}

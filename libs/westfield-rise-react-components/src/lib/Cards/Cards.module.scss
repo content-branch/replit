@@ -1,0 +1,76 @@
+@import '../styles/text-styles.module.scss';
+@import '../styles/themes.module.scss';
+
+.container {
+  padding: 32px 120px 90px;
+  position: relative;
+
+  @include until-desktop-wide {
+    padding: 32px 120px 45px;
+  }
+
+  @include until-desktop-small {
+    padding: 60px 24px 80px 40px;
+  }
+
+  @include until-tablet {
+    padding: 48px 16px 60px;
+  }
+
+  &--inner {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    @include until-desktop-small {
+      gap: 30px;
+    }
+
+    @include until-tablet {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}
+
+@each $name,
+$themeColours in $themes {
+  .bckg-motion--#{$name} {
+    &::before {
+      transition: opacity 0.2s ease-in-out;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      content: '';
+      display: block;
+      opacity: 0;
+      z-index: -1;
+      background: rgba(nth($themeColours, 1), 0.1);
+    }
+  }
+}
+
+.animate {
+  &::before {
+    opacity: 1;
+  }
+}
+
+.title {
+  @extend .heading-1;
+  margin-bottom: 90px;
+
+  @include until-desktop-wide {
+    margin-bottom: 60px;
+  }
+
+  @include until-desktop-small {
+    margin-bottom: 40px;
+  }
+
+  @include until-tablet {
+    text-align: center;
+  }
+}

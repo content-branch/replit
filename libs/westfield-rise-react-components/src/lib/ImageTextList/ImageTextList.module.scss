@@ -1,0 +1,59 @@
+@import '../styles/text-styles.module.scss';
+
+.container {
+  padding: 75px 0 75px;
+
+  @include until-desktop-wide {
+    padding: 75px 0 35px;
+  }
+
+  &--inner {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+
+    @include until-desktop-wide {
+      gap: 80px;
+    }
+
+    @include until-desktop-small {
+      gap: 60px;
+    }
+
+    @include until-tablet {
+      gap: 50px;
+    }
+
+    @include tablet-wide {
+      & > div:nth-of-type(even) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  @include until-desktop-small {
+    padding: 60px 0 80px;
+  }
+
+  @include until-tablet {
+    padding: 48px 0 60px;
+  }
+}
+
+.title {
+  @extend .heading-1;
+  text-align: center;
+  margin-bottom: 75px;
+
+  @include until-desktop-wide {
+    margin-bottom: 75px;
+  }
+
+  @include until-desktop-small {
+    margin-bottom: 60px;
+  }
+
+  @include until-tablet {
+    margin-bottom: 40px;
+  }
+}

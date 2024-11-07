@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M18 5.5L8.375 15.125L4 10.75" stroke="url(#ultraviolet-gradient)" stroke-width="3" stroke-linecap="square"/>
+  <defs>
+    <linearGradient id="ultraviolet-gradient" x1="3.99962" y1="10.3125" x2="18.0004" y2="10.3125" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FA5E99"/>
+      <stop offset="1" stop-color="#7A8CF0"/>
+    </linearGradient>
+  </defs>
+</svg>

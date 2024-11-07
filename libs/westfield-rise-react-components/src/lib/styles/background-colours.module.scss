@@ -1,0 +1,15 @@
+@import '../styles/themes.module.scss';
+
+@each $name, $themeColours in $themes {
+  .bckg-gradient--#{$name} {
+    background: linear-gradient(
+      180deg,
+      rgba(nth($themeColours, 1), 0) 0%,
+      rgba(nth($themeColours, 1), 0.1) 100%
+    );
+  }
+
+  .bckg-solid--#{$name} {
+    background: rgba(nth($themeColours, 1), 0.1);
+  }
+}
